@@ -29,7 +29,7 @@ app.MapGet("/climbs", async (ClimbsDb db) => await db.Climbs.ToListAsync());
 app.MapGet("/climbs/{date}", async (ClimbsDb db, string date) => 
 {
    return await db.Climbs
-      .Where(b => b.Date.Equals(date))
+      .Where(b => b.Equals(date))
       .ToListAsync();
 });
 
